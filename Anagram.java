@@ -6,8 +6,11 @@ import java.util.Comparator;
 public class Anagram {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String []str = {"dog","god","cold","clod","listen","silent","state","taste","pot","opt","top"};
+		String []str = {"dog","cold","listen","state","pot","clod","opt","top","god","silent","taste"};
+		System.out.println("The word list is:");
+		for(String s:str) {
+			System.out.print(s+" ");
+		}
 		int []ind=new int[str.length];
 		for(int i=0;i<ind.length;i++) {
 			ind[i]=i;
@@ -15,11 +18,11 @@ public class Anagram {
 		Word [] sorted=new Word[str.length];
 		for(int i=0;i<str.length;i++) {	
 			String temp=new String(selSort(str[i].toCharArray(),str[i].length()));
-			System.out.println(temp);
 			sorted[i]=new Word(temp,i);
 		}
 		
 		Arrays.sort(sorted,new strC());
+		System.out.println("\nThe words grouped by anagrams:");
 		for (int i = 0; i<str.length;i++)  {
             System.out.print(str[sorted[i].index] + " ");
 		}
